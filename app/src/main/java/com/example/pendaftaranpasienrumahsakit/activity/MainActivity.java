@@ -1,8 +1,11 @@
-package com.example.pendaftaranpasienrumahsakit;
+package com.example.pendaftaranpasienrumahsakit.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,8 +16,12 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 
+import com.example.pendaftaranpasienrumahsakit.R;
+import com.example.pendaftaranpasienrumahsakit.Utility;
 import com.example.pendaftaranpasienrumahsakit.database.AppDatabase;
 import com.example.pendaftaranpasienrumahsakit.entity.Pasien;
+import com.google.zxing.BarcodeFormat;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -28,6 +35,9 @@ public class MainActivity extends AppCompatActivity
     Button buttonOK;
     LinearLayout layoutNavigation;
     ImageView imgBtnShowNavigation;
+    ImageView imageViewLocate;
+    ImageView imageViewHistory;
+    ImageView imageViewLogout;
 
     AppDatabase appDatabase;
 
@@ -72,6 +82,47 @@ public class MainActivity extends AppCompatActivity
             {
                 Utility.hideKeyboard(v);
                 showOrHideNavigation(layoutNavigation);
+            }
+        });
+
+        imageViewLocate = this.findViewById(R.id.ic_page_locate);
+
+        imageViewLocate.setOnClickListener(new View.OnClickListener()
+        {
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+
+            @Override
+            public void onClick( View v )
+            {
+                if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN )
+                {
+                    startActivity(intent, null);
+                }
+            }
+        });
+
+        imageViewHistory = this.findViewById(R.id.ic_page_history);
+        imageViewHistory.setOnClickListener(new View.OnClickListener()
+        {
+            Intent intent = new Intent(getApplicationContext(), HistoryActivity.class);
+
+            @Override
+            public void onClick( View v )
+            {
+                if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN )
+                {
+                    startActivity(intent, null);
+                }
+            }
+        });
+
+        imageViewLogout = this.findViewById(R.id.ic_page_logout);
+        imageViewLogout.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick( View v )
+            {
+                finish();
             }
         });
 
@@ -123,8 +174,21 @@ public class MainActivity extends AppCompatActivity
 
         Pasien pasien = new Pasien(nama, alamat, tahun, lamamenginap, jeniskelamin, namakamar, jenispenyakit);
         appDatabase.pasienDao().insertAll(pasien);
-    }
 
+        try
+        {
+            BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
+            Bitmap bitmap = barcodeEncoder.encodeBitmap("content", BarcodeFormat.QR_CODE, 400, 400);
+            ImageView imageViewQrCode = findViewById(R.id.imageView);
+            imageViewQrCode.setImageBitmap(bitmap);
+        }
+        catch ( Exception exception )
+        {
+
+        }
+
+
+    }
 }
 
 
