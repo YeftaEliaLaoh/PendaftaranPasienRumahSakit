@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/ic_logo_hospital" />
+
+        <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView"
+                android:layout_centerHorizontal="true"
+                android:text="HOSPITAL"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#0b07f3" />
+
+        <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:text="Nama Pasien" />
+
+        <EditText
+                android:id="@+id/NamaPasien"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="22dp" />
+
+        <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/NamaPasien"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:text="Alamat Pasien" />
+
+        <EditText
+                android:id="@+id/AlamatPasien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView3"
+                android:layout_alignEnd="@+id/TahunPasien"
+                android:layout_alignRight="@+id/TahunPasien"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true" />
+
+        <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/AlamatPasien"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:text="Tahun Lahir Pasien" />
+
+        <EditText
+                android:id="@+id/TahunPasien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView4"
+                android:layout_alignEnd="@+id/LamaMenginapPasien"
+                android:layout_alignRight="@+id/LamaMenginapPasien"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true" />
+
+        <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TahunPasien"
+                android:layout_alignEnd="@+id/radioButtonPerempuan"
+                android:layout_alignRight="@+id/radioButtonPerempuan"
+                android:text="Lama Menginap" />
+
+        <EditText
+                android:id="@+id/LamaMenginapPasien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView4"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="63dp" />
+
+        <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/LamaMenginapPasien"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:text="Jenis Kelamin" />
+
+        <RadioButton
+                android:id="@+id/radioButtonLaki"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView6"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:text="Laki Laki" />
+
+        <RadioButton
+                android:id="@+id/radioButtonPerempuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radioButtonLaki"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:text="Perempuan" />
+
+        <CheckBox
+                android:id="@+id/checkBoxAnggrek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView7"
+                android:layout_alignStart="@+id/textView7"
+                android:layout_alignLeft="@+id/textView7"
+                android:text="Anggrek" />
+
+        <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radioButtonPerempuan"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:text="Nama Kamar" />
+
+        <CheckBox
+                android:id="@+id/checkBoxMawar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/checkBoxAnggrek"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:text="Mawar" />
+
+        <CheckBox
+                android:id="@+id/checkBoxMelati"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/checkBoxAnggrek"
+                android:layout_toEndOf="@+id/textView3"
+                android:layout_toRightOf="@+id/textView3"
+                android:text="Melati" />
+
+        <Spinner
+                android:id="@+id/spinnerPenyakit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView8"
+                android:layout_alignStart="@+id/textView8"
+                android:layout_alignLeft="@+id/textView8"
+                android:entries="@array/PenyakitPasien" />
+
+        <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/LamaMenginapPasien"
+                android:layout_marginStart="38dp"
+                android:layout_marginLeft="38dp"
+                android:layout_toEndOf="@+id/checkBoxMelati"
+                android:layout_toRightOf="@+id/checkBoxMelati"
+                android:text="Penyakit yang diderita" />
+
+        <Button
+                android:id="@+id/buttonOK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spinnerPenyakit"
+                android:layout_alignEnd="@+id/textView8"
+                android:layout_alignRight="@+id/textView8"
+                android:layout_marginEnd="22dp"
+                android:layout_marginRight="22dp"
+                android:text="OK" />
+
+        <TextView
+                android:id="@+id/tvHasil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/checkBoxMawar"
+                android:text="hasil" />
+
+    </RelativeLayout>
+
+</ScrollView>
