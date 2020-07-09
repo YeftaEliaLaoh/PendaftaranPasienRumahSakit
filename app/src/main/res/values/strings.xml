@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Pendaftaran Pasien Rumah Sakit</string>
+    <string name="page_locate">Locate</string>
+    <string name="page_history">Report</string>
+    <string name="page_logout">Logout</string>
 </resources>

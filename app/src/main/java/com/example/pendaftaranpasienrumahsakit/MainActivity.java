@@ -8,9 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.example.pendaftaranpasienrumahsakit.database.AppDatabase;
 import com.example.pendaftaranpasienrumahsakit.entity.Pasien;
@@ -25,9 +26,12 @@ public class MainActivity extends AppCompatActivity
     CheckBox checkBoxAnggrek, checkBoxMawar, checkBoxMelati;
     Spinner spinnerPenyakit;
     Button buttonOK;
-    TextView tvHasil;
+    LinearLayout layoutNavigation;
+    ImageView imgBtnShowNavigation;
 
     AppDatabase appDatabase;
+
+    private boolean navigationIsShowing = true;
 
     @Override
     protected void onCreate( Bundle savedInstanceState )
@@ -49,8 +53,6 @@ public class MainActivity extends AppCompatActivity
 
         spinnerPenyakit = findViewById(R.id.spinnerPenyakit);
         buttonOK = findViewById(R.id.buttonOK);
-        tvHasil = findViewById(R.id.tvHasil);
-
 
         buttonOK.setOnClickListener(new View.OnClickListener()
         {
@@ -60,10 +62,37 @@ public class MainActivity extends AppCompatActivity
                 doProces();
             }
         });
+        layoutNavigation = findViewById(R.id.layout_navigation);
+        imgBtnShowNavigation = findViewById(R.id.imgbtn_navigation);
+
+        imgBtnShowNavigation.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick( View v )
+            {
+                Utility.hideKeyboard(v);
+                showOrHideNavigation(layoutNavigation);
+            }
+        });
 
         appDatabase = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, "database-name").allowMainThreadQueries().build();
 
+    }
+
+    private void showOrHideNavigation( LinearLayout layoutNavigation )
+    {
+        if( navigationIsShowing )
+        {
+            navigationIsShowing = false;
+            layoutNavigation.setVisibility(View.VISIBLE);
+
+        }
+        else
+        {
+            navigationIsShowing = true;
+            layoutNavigation.setVisibility(View.GONE);
+        }
     }
 
     private void doProces()
@@ -92,16 +121,7 @@ public class MainActivity extends AppCompatActivity
         if( checkBoxMawar.isChecked() )
             namakamar += checkBoxMawar.getText().toString();
 
-        tvHasil.setText("Nama : " + nama + "\n" +
-                "Alamat : " + alamat + "\n" +
-                "Tahun : " + tahun + "\n" +
-                "Lama Menginap : " + lamamenginap + "\n" +
-                "Jenis Kelamin : " + jeniskelamin + "\n" +
-                "Nama Kamar : " + namakamar + "\n" +
-                "Jenis Penyakit : " + jenispenyakit + "\n"
-        );
-
-        Pasien pasien = new Pasien(nama, alamat, tahun, lamamenginap, namakamar, jenispenyakit);
+        Pasien pasien = new Pasien(nama, alamat, tahun, lamamenginap, jeniskelamin, namakamar, jenispenyakit);
         appDatabase.pasienDao().insertAll(pasien);
     }
 
