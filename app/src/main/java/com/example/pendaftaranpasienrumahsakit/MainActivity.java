@@ -1,6 +1,7 @@
 package com.example.pendaftaranpasienrumahsakit;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,9 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.pendaftaranpasienrumahsakit.database.AppDatabase;
+import com.example.pendaftaranpasienrumahsakit.entity.Pasien;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -23,6 +27,7 @@ public class MainActivity extends AppCompatActivity
     Button buttonOK;
     TextView tvHasil;
 
+    AppDatabase appDatabase;
 
     @Override
     protected void onCreate( Bundle savedInstanceState )
@@ -30,21 +35,21 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        NamaPasien = (EditText) findViewById(R.id.NamaPasien);
-        AlamatPasien = (EditText) findViewById(R.id.AlamatPasien);
-        TahunPasien = (EditText) findViewById(R.id.TahunPasien);
-        LamaMenginapPasien = (EditText) findViewById(R.id.LamaMenginapPasien);
+        NamaPasien = findViewById(R.id.NamaPasien);
+        AlamatPasien = findViewById(R.id.AlamatPasien);
+        TahunPasien = findViewById(R.id.TahunPasien);
+        LamaMenginapPasien = findViewById(R.id.LamaMenginapPasien);
 
-        radioButtonLaki = (RadioButton) findViewById(R.id.radioButtonLaki);
-        radioButtonPerempuan = (RadioButton) findViewById(R.id.radioButtonPerempuan);
+        radioButtonLaki = findViewById(R.id.radioButtonLaki);
+        radioButtonPerempuan = findViewById(R.id.radioButtonPerempuan);
 
-        checkBoxAnggrek = (CheckBox) findViewById(R.id.checkBoxAnggrek);
-        checkBoxMawar = (CheckBox) findViewById(R.id.checkBoxMawar);
-        checkBoxMelati = (CheckBox) findViewById(R.id.checkBoxMelati);
+        checkBoxAnggrek = findViewById(R.id.checkBoxAnggrek);
+        checkBoxMawar = findViewById(R.id.checkBoxMawar);
+        checkBoxMelati = findViewById(R.id.checkBoxMelati);
 
-        spinnerPenyakit = (Spinner) findViewById(R.id.spinnerPenyakit);
-        buttonOK = (Button) findViewById(R.id.buttonOK);
-        tvHasil = (TextView) findViewById(R.id.tvHasil);
+        spinnerPenyakit = findViewById(R.id.spinnerPenyakit);
+        buttonOK = findViewById(R.id.buttonOK);
+        tvHasil = findViewById(R.id.tvHasil);
 
 
         buttonOK.setOnClickListener(new View.OnClickListener()
@@ -55,6 +60,10 @@ public class MainActivity extends AppCompatActivity
                 doProces();
             }
         });
+
+        appDatabase = Room.databaseBuilder(getApplicationContext(),
+                AppDatabase.class, "database-name").allowMainThreadQueries().build();
+
     }
 
     private void doProces()
@@ -92,7 +101,8 @@ public class MainActivity extends AppCompatActivity
                 "Jenis Penyakit : " + jenispenyakit + "\n"
         );
 
-
+        Pasien pasien = new Pasien(nama, alamat, tahun, lamamenginap, namakamar, jenispenyakit);
+        appDatabase.pasienDao().insertAll(pasien);
     }
 
 }
