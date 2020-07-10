@@ -136,71 +136,18 @@
                     android:layout_alignParentLeft="true"
                     android:text="Perempuan" />
 
-            <CheckBox
-                    android:id="@+id/checkBoxAnggrek"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView7"
-                    android:layout_alignStart="@+id/textView7"
-                    android:layout_alignLeft="@+id/textView7"
-                    android:text="Anggrek" />
 
-            <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/radioButtonPerempuan"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:text="Nama Kamar" />
 
-            <CheckBox
-                    android:id="@+id/checkBoxMawar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/checkBoxAnggrek"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:text="Mawar" />
 
-            <CheckBox
-                    android:id="@+id/checkBoxMelati"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/checkBoxAnggrek"
-                    android:layout_toEndOf="@+id/textView3"
-                    android:layout_toRightOf="@+id/textView3"
-                    android:text="Melati" />
-
-            <Spinner
-                    android:id="@+id/spinnerPenyakit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView8"
-                    android:layout_alignStart="@+id/textView8"
-                    android:layout_alignLeft="@+id/textView8"
-                    android:entries="@array/PenyakitPasien" />
-
-            <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/LamaMenginapPasien"
-                    android:layout_marginStart="38dp"
-                    android:layout_marginLeft="38dp"
-                    android:layout_toEndOf="@+id/checkBoxMelati"
-                    android:layout_toRightOf="@+id/checkBoxMelati"
-                    android:text="Penyakit yang diderita" />
 
             <Button
                     android:id="@+id/buttonOK"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/spinnerPenyakit"
-                    android:layout_alignEnd="@+id/textView8"
-                    android:layout_alignRight="@+id/textView8"
+                    android:layout_below="@+id/radioButtonPerempuan"
                     android:layout_marginEnd="22dp"
                     android:layout_marginRight="22dp"
+                    android:layout_alignParentEnd="true"
                     android:text="OK" />
 
         </RelativeLayout>

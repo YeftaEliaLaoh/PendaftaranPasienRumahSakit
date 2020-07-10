@@ -1,2 +1,2 @@
-rootProject.name='Pendaftaran Pasien Rumah Sakit'
+rootProject.name = 'Pendaftaran Pasien Rumah Sakit'
 include ':app'

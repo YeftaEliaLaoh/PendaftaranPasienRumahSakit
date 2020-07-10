@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/parentLayout"
+        android:layout_width="140sp"
+        android:layout_height="240sp"
+        android:layout_margin="10sp"
+        android:elevation="10sp"
+        android:orientation="vertical"
+        app:cardCornerRadius="9sp">
+
+
+    <RelativeLayout
+            android:layout_width="140sp"
+            android:layout_height="240sp"
+            android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/ltName"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_marginStart="10sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="0sp"
+                android:layout_marginEnd="5sp"
+                android:layout_marginRight="5sp"
+                android:gravity="center"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="15sp" />
+
+        <TextView
+                android:id="@+id/ltAlamat"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_marginStart="10sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="40sp"
+                android:layout_marginEnd="5sp"
+                android:layout_marginRight="5sp"
+                android:gravity="center"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="15sp" />
+
+        <TextView
+                android:id="@+id/ltTahun"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_marginStart="10sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="80sp"
+                android:layout_marginEnd="5sp"
+                android:layout_marginRight="5sp"
+                android:gravity="center"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="15sp" />
+
+        <TextView
+                android:id="@+id/ltLama"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_marginStart="10sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="120sp"
+                android:layout_marginEnd="5sp"
+                android:layout_marginRight="5sp"
+                android:gravity="center"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="15sp" />
+
+        <TextView
+                android:id="@+id/ltJenisKelamin"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_marginStart="10sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="160sp"
+                android:layout_marginEnd="5sp"
+                android:layout_marginRight="5sp"
+                android:gravity="center"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="15sp" />
+
+        <TextView
+                android:id="@+id/ltKamar"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_marginStart="10sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="200sp"
+                android:layout_marginEnd="5sp"
+                android:layout_marginRight="5sp"
+                android:gravity="center"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="15sp" />
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

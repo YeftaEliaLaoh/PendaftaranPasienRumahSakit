@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -20,8 +19,6 @@ import com.example.pendaftaranpasienrumahsakit.R;
 import com.example.pendaftaranpasienrumahsakit.Utility;
 import com.example.pendaftaranpasienrumahsakit.database.AppDatabase;
 import com.example.pendaftaranpasienrumahsakit.entity.Pasien;
-import com.google.zxing.BarcodeFormat;
-import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -57,11 +54,6 @@ public class MainActivity extends AppCompatActivity
         radioButtonLaki = findViewById(R.id.radioButtonLaki);
         radioButtonPerempuan = findViewById(R.id.radioButtonPerempuan);
 
-        checkBoxAnggrek = findViewById(R.id.checkBoxAnggrek);
-        checkBoxMawar = findViewById(R.id.checkBoxMawar);
-        checkBoxMelati = findViewById(R.id.checkBoxMelati);
-
-        spinnerPenyakit = findViewById(R.id.spinnerPenyakit);
         buttonOK = findViewById(R.id.buttonOK);
 
         buttonOK.setOnClickListener(new View.OnClickListener()
@@ -174,19 +166,6 @@ public class MainActivity extends AppCompatActivity
 
         Pasien pasien = new Pasien(nama, alamat, tahun, lamamenginap, jeniskelamin, namakamar, jenispenyakit);
         appDatabase.pasienDao().insertAll(pasien);
-
-        try
-        {
-            BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
-            Bitmap bitmap = barcodeEncoder.encodeBitmap("content", BarcodeFormat.QR_CODE, 400, 400);
-            ImageView imageViewQrCode = findViewById(R.id.imageView);
-            imageViewQrCode.setImageBitmap(bitmap);
-        }
-        catch ( Exception exception )
-        {
-
-        }
-
 
     }
 }
