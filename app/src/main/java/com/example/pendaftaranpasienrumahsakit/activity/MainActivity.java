@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.example.pendaftaranpasienrumahsakit.R;
 import com.example.pendaftaranpasienrumahsakit.Utility;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity
     EditText NamaPasien;
     EditText AlamatPasien;
     EditText TahunPasien;
+    RadioGroup list_opsi;
     RadioButton radioButtonLaki, radioButtonPerempuan;
     Button buttonOK;
     LinearLayout layoutNavigation;
@@ -46,11 +48,26 @@ public class MainActivity extends AppCompatActivity
         AlamatPasien = findViewById(R.id.AlamatPasien);
         TahunPasien = findViewById(R.id.TahunPasien);
 
+        list_opsi = findViewById(R.id.opsi);
+        list_opsi.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged( RadioGroup radioGroup, int id )
+            {
+                switch ( id )
+                {
+                    case R.id.radioButtonLaki:
+                        break;
+                    case R.id.radioButtonPerempuan:
+                        break;
+
+                }
+            }
+        });
+
         radioButtonLaki = findViewById(R.id.radioButtonLaki);
         radioButtonPerempuan = findViewById(R.id.radioButtonPerempuan);
-
         buttonOK = findViewById(R.id.buttonOK);
-
         buttonOK.setOnClickListener(new View.OnClickListener()
         {
             @Override
