@@ -9,7 +9,6 @@
             android:id="@+id/my_TableView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
 
             app:column_header_height="@dimen/table_view_cell_height"
             app:row_header_width="@dimen/table_view_row_header_width"
