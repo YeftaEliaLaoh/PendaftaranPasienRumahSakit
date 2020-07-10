@@ -63,6 +63,32 @@
     </RelativeLayout>
 
     <RelativeLayout
+            android:id="@+id/nav_report"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/side_padding"
+            android:layout_marginRight="@dimen/side_padding"
+            android:layout_weight="1">
+
+        <ImageView
+                android:id="@+id/ic_page_report"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_page_report" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ic_page_report"
+                android:layout_centerHorizontal="true"
+                android:text="@string/page_report"
+                android:textColor="@color/layout_white"
+                android:textSize="@dimen/nav_text_size" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/side_padding"

@@ -41,6 +41,5 @@ public class HistoryActivity extends AppCompatActivity
         recyclerView.setAdapter(historyAdapter);
         recyclerView.getAdapter().notifyDataSetChanged();
 
-
     }
 }

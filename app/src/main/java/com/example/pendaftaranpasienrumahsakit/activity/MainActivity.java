@@ -8,12 +8,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
-import android.widget.Spinner;
 
 import com.example.pendaftaranpasienrumahsakit.R;
 import com.example.pendaftaranpasienrumahsakit.Utility;
@@ -25,15 +23,13 @@ public class MainActivity extends AppCompatActivity
     EditText NamaPasien;
     EditText AlamatPasien;
     EditText TahunPasien;
-    EditText LamaMenginapPasien;
     RadioButton radioButtonLaki, radioButtonPerempuan;
-    CheckBox checkBoxAnggrek, checkBoxMawar, checkBoxMelati;
-    Spinner spinnerPenyakit;
     Button buttonOK;
     LinearLayout layoutNavigation;
     ImageView imgBtnShowNavigation;
     ImageView imageViewLocate;
     ImageView imageViewHistory;
+    ImageView imageViewReport;
     ImageView imageViewLogout;
 
     AppDatabase appDatabase;
@@ -49,7 +45,6 @@ public class MainActivity extends AppCompatActivity
         NamaPasien = findViewById(R.id.NamaPasien);
         AlamatPasien = findViewById(R.id.AlamatPasien);
         TahunPasien = findViewById(R.id.TahunPasien);
-        LamaMenginapPasien = findViewById(R.id.LamaMenginapPasien);
 
         radioButtonLaki = findViewById(R.id.radioButtonLaki);
         radioButtonPerempuan = findViewById(R.id.radioButtonPerempuan);
@@ -61,7 +56,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick( View view )
             {
-                doProces();
+                doProcess();
             }
         });
         layoutNavigation = findViewById(R.id.layout_navigation);
@@ -108,6 +103,21 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        imageViewReport = this.findViewById(R.id.ic_page_report);
+        imageViewReport.setOnClickListener(new View.OnClickListener()
+        {
+            Intent intent = new Intent(getApplicationContext(), ReportActivity.class);
+
+            @Override
+            public void onClick( View v )
+            {
+                if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN )
+                {
+                    startActivity(intent, null);
+                }
+            }
+        });
+
         imageViewLogout = this.findViewById(R.id.ic_page_logout);
         imageViewLogout.setOnClickListener(new View.OnClickListener()
         {
@@ -138,15 +148,12 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    private void doProces()
+    private void doProcess()
     {
         String nama = NamaPasien.getText().toString();
         String alamat = AlamatPasien.getText().toString();
         String tahun = TahunPasien.getText().toString();
-        String lamamenginap = LamaMenginapPasien.getText().toString();
         String jeniskelamin = "";
-        String namakamar = "";
-        String jenispenyakit = spinnerPenyakit.getSelectedItem().toString();
 
         if( radioButtonLaki.isChecked() )
         {
@@ -157,14 +164,7 @@ public class MainActivity extends AppCompatActivity
             jeniskelamin = radioButtonPerempuan.getText().toString();
         }
 
-        if( checkBoxAnggrek.isChecked() )
-            namakamar += checkBoxAnggrek.getText().toString();
-        if( checkBoxMelati.isChecked() )
-            namakamar += checkBoxMelati.getText().toString();
-        if( checkBoxMawar.isChecked() )
-            namakamar += checkBoxMawar.getText().toString();
-
-        Pasien pasien = new Pasien(nama, alamat, tahun, lamamenginap, jeniskelamin, namakamar, jenispenyakit);
+        Pasien pasien = new Pasien(nama, alamat, tahun, jeniskelamin);
         appDatabase.pasienDao().insertAll(pasien);
 
     }

@@ -3,7 +3,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/parentLayout"
         android:layout_width="140sp"
-        android:layout_height="240sp"
+        android:layout_height="160sp"
         android:layout_margin="10sp"
         android:elevation="10sp"
         android:orientation="vertical"
@@ -11,8 +11,8 @@
 
 
     <RelativeLayout
-            android:layout_width="140sp"
-            android:layout_height="240sp"
+            android:layout_width="match_parent"
+            android:layout_height="160sp"
             android:orientation="vertical">
 
         <TextView
@@ -55,38 +55,12 @@
                 android:textSize="15sp" />
 
         <TextView
-                android:id="@+id/ltLama"
-                android:layout_width="match_parent"
-                android:layout_height="40sp"
-                android:layout_marginStart="10sp"
-                android:layout_marginLeft="10sp"
-                android:layout_marginTop="120sp"
-                android:layout_marginEnd="5sp"
-                android:layout_marginRight="5sp"
-                android:gravity="center"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="15sp" />
-
-        <TextView
                 android:id="@+id/ltJenisKelamin"
                 android:layout_width="match_parent"
                 android:layout_height="40sp"
                 android:layout_marginStart="10sp"
                 android:layout_marginLeft="10sp"
-                android:layout_marginTop="160sp"
-                android:layout_marginEnd="5sp"
-                android:layout_marginRight="5sp"
-                android:gravity="center"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="15sp" />
-
-        <TextView
-                android:id="@+id/ltKamar"
-                android:layout_width="match_parent"
-                android:layout_height="40sp"
-                android:layout_marginStart="10sp"
-                android:layout_marginLeft="10sp"
-                android:layout_marginTop="200sp"
+                android:layout_marginTop="120sp"
                 android:layout_marginEnd="5sp"
                 android:layout_marginRight="5sp"
                 android:gravity="center"

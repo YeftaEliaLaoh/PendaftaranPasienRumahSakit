@@ -25,6 +25,14 @@
                     android:value=".activity.HistoryActivity" />
         </activity>
         <activity
+                android:name=".activity.ReportActivity"
+                android:screenOrientation="fullSensor"
+                android:theme="@style/NoAnimTheme">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".activity.ReportActivity" />
+        </activity>
+        <activity
                 android:name=".activity.DetailActivity"
                 android:screenOrientation="fullSensor"
                 android:theme="@style/NoAnimTheme">

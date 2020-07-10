@@ -84,36 +84,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/textView4"
-                    android:layout_alignEnd="@+id/LamaMenginapPasien"
-                    android:layout_alignRight="@+id/LamaMenginapPasien"
+                    android:layout_alignEnd="@+id/textView6"
+                    android:layout_alignRight="@+id/textView6"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true" />
-
-            <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/TahunPasien"
-                    android:layout_alignEnd="@+id/radioButtonPerempuan"
-                    android:layout_alignRight="@+id/radioButtonPerempuan"
-                    android:text="Lama Menginap" />
-
-            <EditText
-                    android:id="@+id/LamaMenginapPasien"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView4"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="63dp" />
 
             <TextView
                     android:id="@+id/textView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/LamaMenginapPasien"
+                    android:layout_below="@+id/TahunPasien"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
                     android:text="Jenis Kelamin" />
@@ -136,18 +116,15 @@
                     android:layout_alignParentLeft="true"
                     android:text="Perempuan" />
 
-
-
-
-
             <Button
                     android:id="@+id/buttonOK"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/radioButtonPerempuan"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
                     android:layout_marginEnd="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_alignParentEnd="true"
                     android:text="OK" />
 
         </RelativeLayout>

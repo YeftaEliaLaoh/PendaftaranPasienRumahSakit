@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">Pendaftaran Pasien Rumah Sakit</string>
     <string name="page_locate">Locate</string>
-    <string name="page_history">Report</string>
+    <string name="page_history">History</string>
+    <string name="page_report">Report</string>
     <string name="page_logout">Logout</string>
+
+    <string name="sort_ascending">Sort Ascending</string>
+    <string name="sort_descending">Sort Descending</string>
+    <string name="clear_sorting">Clear</string>
+    <string name="row_show">Show 5. Row</string>
+    <string name="row_hide">Hide 5. Row</string>
 </resources>

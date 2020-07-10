@@ -46,16 +46,12 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.myviewho
         TextView ltName = holder.itemView.findViewById(R.id.ltName);
         TextView ltAlamat = holder.itemView.findViewById(R.id.ltAlamat);
         TextView ltTahun = holder.itemView.findViewById(R.id.ltTahun);
-        TextView ltLama = holder.itemView.findViewById(R.id.ltLama);
         TextView ltJenisKelamin = holder.itemView.findViewById(R.id.ltJenisKelamin);
-        TextView ltKamar = holder.itemView.findViewById(R.id.ltKamar);
 
         ltName.setText(String.format("Nama : %s", item1.get(position).nama));
         ltAlamat.setText(String.format("Alamat : %s", item1.get(position).alamat));
         ltTahun.setText(String.format("Tahun : %s", item1.get(position).tahun));
-        ltLama.setText(String.format("Lama : %s", item1.get(position).lama));
         ltJenisKelamin.setText(String.format("J K : %s", item1.get(position).jenisKelamin));
-        ltKamar.setText(String.format("Kamar : %s", item1.get(position).kamar));
 
         CardView cardView = holder.itemView.findViewById(R.id.parentLayout);
         cardView.setOnClickListener(new View.OnClickListener()
@@ -70,9 +66,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.myviewho
             }
         });
 
-
     }
-
 
     @Override
     public int getItemCount()
